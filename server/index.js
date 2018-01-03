@@ -6,4 +6,7 @@ app.get('/', (req, res) => {
 	res.send('This is PSG');
 });
 
-app.listen(1111);
+const PORT = process.env.PORT || 1111;
+app.listen(PORT);
+
+// app.listen(1111);
