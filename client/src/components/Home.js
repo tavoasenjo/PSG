@@ -17,6 +17,7 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div>
+				<h3>The product cards will be placed below</h3>
 				<ul>
 					{this.state.products.map(product => 
 						<li key={product.id}>{product.name}</li>
