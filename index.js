@@ -5,8 +5,10 @@ const app = express();
 // Call the data
 const products = require('./server/products');
 
-// this serves all the files placed in public
+this serves all the files placed in public
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.use(express.static(path.join(__dirname, 'client')));
 
 app.get('/*', function(req, res, next) {
 	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));

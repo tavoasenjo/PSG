@@ -9,10 +9,19 @@ class Home extends React.Component {
 		};
 	}
 
+	componentDidMount(){
+		fetch('/api/products').then(res => res.json())
+		.then(products => this.setState({products}));
+	}
+
 	render() {
 		return (
 			<div>
-				<h4>This is where the cards will be placed</h4>
+				<ul>
+					{this.state.products.map(product => 
+						<li key={product.id}>{product.name}</li>
+					)}
+				</ul>
 			</div>
 		);
 	}
