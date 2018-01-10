@@ -9,10 +9,5 @@ app.get('/', function(req, res, next) {
 	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
 });
 
-//test
-app.get('/test', (req, res, next) => {
-	res.send('this is a test');
-});
-
 const PORT = process.env.PORT || 1111;
 app.listen(PORT); // app.listen(1111);
