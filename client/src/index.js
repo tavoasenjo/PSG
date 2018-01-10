@@ -9,10 +9,10 @@ import 'materialize-css/dist/css/materialize.min.css';
 
 // import components
 import Header from './components/Header';
+import Home from './components/Home';
 import ContactForm from './components/ContactForm';
 
 // Dummy link
-const Home = () => <h2>home</h2>;
 const About = () => <h2>about</h2>;
 const Contact = () => <h2>contact</h2>;
 
@@ -22,14 +22,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="container">
-				<BrowserRouter>
-					<div>
-						<Header /> {/*Header will be always visible*/}
-						<Route exact path="/" component={Home} />
-						<Route exact path="/about" component={About} />
-						<Route path="/contact" component={Contact} />
-					</div>
-				</BrowserRouter>
+				<Header />
 			</div>
 		);
 	}
