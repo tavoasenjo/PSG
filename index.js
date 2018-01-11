@@ -8,15 +8,15 @@ const products = require('./server/products');
 //this serves all the files placed in public
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use(express.static(path.join(__dirname, 'client')));
+// app.use(express.static(path.join(__dirname, 'client')));
 
-app.get('/*', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-});
+// app.get('/*', function(req, res, next) {
+// 	res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+// });
 
-app.get('/', function(req, res, next) {
-	res.sendFile(path.join(__dirname, 'client', 'public', 'index.html'));
-});
+// app.get('/', function(req, res, next) {
+// 	res.sendFile(path.join(__dirname, 'client', 'public', 'index.html'));
+// });
 
 // Create route to return data from products
 app.get('/api/products', (req, res, next) => {
