@@ -1,4 +1,6 @@
 import React from 'react';
+// import materialize CSS
+import 'materialize-css/dist/css/materialize.min.css';
 
 class Home extends React.Component {
 	constructor() {
@@ -9,20 +11,18 @@ class Home extends React.Component {
 		};
 	}
 
-	componentDidMount(){
-		fetch('/api/products').then(res => res.json())
-		.then(products => this.setState({products}));
+	componentDidMount() {
+		fetch('/api/products').then(res => res.json()).then(products => this.setState({ products }));
 	}
 
 	render() {
 		return (
-			<div>
-				<h3>The product cards will be placed below</h3>
-				<ul>
-					{this.state.products.map(product => 
-						<li key={product.id}>{product.name}</li>
-					)}
-				</ul>
+			<div className="row">
+				{this.state.products.map(product =>
+					<div className="col s12 m6 l4 card small blue-grey darken-1 white-text" key={product.id}>
+						{product.name}
+					</div>
+				)}
 			</div>
 		);
 	}

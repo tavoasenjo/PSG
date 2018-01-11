@@ -1,6 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import materialize CSS
+import 'materialize-css/dist/css/materialize.min.css';
 
 //components
 import Home from './Home';
@@ -26,6 +28,7 @@ class Header extends React.Component {
 							<li>
 								<Link to="/contact">Contact</Link>
 							</li>
+
 							<Route exact path="/" component={Home} />
 							<Route exact path="/about" component={About} />
 							<Route exact path="/contact" component={Contact} />
