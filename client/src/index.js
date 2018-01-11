@@ -12,10 +12,6 @@ import Header from './components/Header';
 import Home from './components/Home';
 import ContactForm from './components/ContactForm';
 
-// Dummy link
-const About = () => <h2>about</h2>;
-const Contact = () => <h2>contact</h2>;
-
 const Wrapper = styled.section`width: 100%;`;
 
 class App extends React.Component {
