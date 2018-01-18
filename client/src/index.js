@@ -5,7 +5,15 @@ import styled from 'styled-components';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 // import materialize CSS
-import 'materialize-css/dist/css/materialize.min.css';
+// import 'materialize-css/dist/css/materialize.min.css';
+
+import WebFont from 'webfontloader';
+
+WebFont.load({
+	google: {
+		families: ['Titillium Web:300,400,700', 'sans-serif']
+	}
+});
 
 // import components
 import Header from './components/Header';
@@ -17,7 +25,7 @@ const Wrapper = styled.section`width: 100%;`;
 class App extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div>
 				<Header />
 			</div>
 		);

@@ -1,6 +1,7 @@
 import React from 'react';
 // import materialize CSS
-import 'materialize-css/dist/css/materialize.min.css';
+// import 'materialize-css/dist/css/materialize.min.css';
+import styled from 'styled-components';
 
 class Home extends React.Component {
 	constructor() {
