@@ -3,6 +3,8 @@ import React from 'react';
 // import 'materialize-css/dist/css/materialize.min.css';
 import styled from 'styled-components';
 
+import Cards from './Cards';
+
 class Home extends React.Component {
 	constructor() {
 		super();
@@ -17,13 +19,10 @@ class Home extends React.Component {
 	}
 
 	render() {
+		const { products } = this.state;
 		return (
 			<div className="row">
-				{this.state.products.map(product =>
-					<div className="col s12 m6 l4 card small blue-grey darken-1 white-text" key={product.id}>
-						{product.name}
-					</div>
-				)}
+				<Cards products={products} />
 			</div>
 		);
 	}

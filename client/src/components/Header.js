@@ -14,7 +14,8 @@ import ContactForm from './ContactForm';
 import '../css/styles.css';
 
 // Styles with Styled-Components
-// Logo
+const MainNav = styled.nav`margin-bottom: 50px;`;
+
 const LogoPau = styled.div`
 	width: 100px;
 	height: 100px;
@@ -43,7 +44,7 @@ class Header extends React.Component {
 		return (
 			<Router>
 				<div>
-					<nav>
+					<MainNav>
 						<div>
 							<LogoPau className="logo">
 								<a href="#" className="brand-logo">
@@ -64,7 +65,7 @@ class Header extends React.Component {
 								</Li>
 							</StyledUl>
 						</div>
-					</nav>
+					</MainNav>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
 					<Route exact path="/contact" component={ContactForm} />
