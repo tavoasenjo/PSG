@@ -2,6 +2,9 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+// serve assets
+app.use(express.static('assets'));
+
 // Call the data
 const products = require('./server/products');
 
