@@ -17,6 +17,16 @@ import styled from 'styled-components';
 // 	height: 250px;
 // `;
 
+const Button = styled.button`
+	// if it's a small button use less padding
+	padding: ${props => (props.small ? '0.25em 1em' : '0.5em 2em')};
+	color: ${props => (props.small ? 'white' : 'black')};
+	font-weight: ${props => (props.small ? '300' : '700')};
+	margin: 5px 0;
+	border: 0;
+	background: #ffc600;
+`;
+
 const Cards = ({ products }) => {
 	return (
 		<div className="cards">
@@ -26,6 +36,8 @@ const Cards = ({ products }) => {
 					<h2>
 						{product.name}
 					</h2>
+					<Button>See more</Button>
+					<Button small>See more</Button>
 				</div>
 			)}
 		</div>

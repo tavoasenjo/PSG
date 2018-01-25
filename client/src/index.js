@@ -19,6 +19,7 @@ WebFont.load({
 import Header from './components/Header';
 import Home from './components/Home';
 import ContactForm from './components/ContactForm';
+import Footer from './components/Footer';
 
 const Wrapper = styled.section`width: 100%;`;
 
@@ -27,6 +28,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<Header />
+				<Footer />
 			</div>
 		);
 	}

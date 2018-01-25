@@ -1,9 +1,21 @@
 /*img logo*/
 
+html,
+body {
+	height: 100%;
+	padding: 0;
+}
+
 body {
 	background-color: #ffffff;
 	font-family: 'roboto';
 	margin: 0 50px;
+}
+
+#root {
+	position: relative;
+	min-height: 100%;
+	padding-bottom: 100px;
 }
 
 img {

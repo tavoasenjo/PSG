@@ -14,7 +14,11 @@ import ContactForm from './ContactForm';
 import '../css/styles.css';
 
 // Styles with Styled-Components
-const MainNav = styled.nav`margin-bottom: 50px;`;
+const MainNav = styled.nav`
+	margin-bottom: 50px;
+	display: grid;
+	grid-template-areas: "logo" "menu";
+`;
 
 const LogoPau = styled.div`
 	width: 100px;
@@ -45,26 +49,24 @@ class Header extends React.Component {
 			<Router>
 				<div>
 					<MainNav>
-						<div>
-							<LogoPau className="logo">
-								<a href="#" className="brand-logo">
-									<img src={Logo} alt="Logo Pau" />
-								</a>
-							</LogoPau>
-							<StyledUl>
-								<Li>
-									<StyledLink className to="/">
-										Home
-									</StyledLink>
-								</Li>
-								<Li>
-									<StyledLink to="/about">About</StyledLink>
-								</Li>
-								<Li>
-									<StyledLink to="/contact">Contact</StyledLink>
-								</Li>
-							</StyledUl>
-						</div>
+						<LogoPau className="logo">
+							<a href="#" className="brand-logo">
+								<img src={Logo} alt="Logo Pau" />
+							</a>
+						</LogoPau>
+						<StyledUl>
+							<Li>
+								<StyledLink className to="/">
+									Home
+								</StyledLink>
+							</Li>
+							<Li>
+								<StyledLink to="/about">About</StyledLink>
+							</Li>
+							<Li>
+								<StyledLink to="/contact">Contact</StyledLink>
+							</Li>
+						</StyledUl>
 					</MainNav>
 					<Route exact path="/" component={Home} />
 					<Route exact path="/about" component={About} />
