@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import Field from './Field';
 import Button from './Button';
+import styled from 'styled-components';
+
+const ContactContainer = styled.section`
+	position: absolute;
+	top: 250px;
+	width: 100%;
+`;
 
 class ContactForm extends Component {
 	constructor(props) {
@@ -24,7 +31,7 @@ class ContactForm extends Component {
 
 	render() {
 		return (
-			<div>
+			<ContactContainer>
 				{/*Name field*/}
 				<Field
 					label="name"
@@ -46,7 +53,7 @@ class ContactForm extends Component {
 				/>
 				{/*submit button*/}
 				<Button formValues={this.state} email="pauligonzalezincker@gmail.com" />
-			</div>
+			</ContactContainer>
 		);
 	}
 }

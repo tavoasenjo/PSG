@@ -2,30 +2,25 @@ import React from 'react';
 // import materialize CSS
 // import 'materialize-css/dist/css/materialize.min.css';
 import styled from 'styled-components';
+import Card from './Card';
 
-import Cards from './Cards';
+const HomeContainer = styled.section`
+	position: absolute;
+	top: 250px;
+	width: 100%;
+	// background: tomato;
+`;
 
-class Home extends React.Component {
-	constructor() {
-		super();
-		// create state
-		this.state = {
-			products: []
-		};
-	}
-
-	componentDidMount() {
-		fetch('/api/products').then(res => res.json()).then(products => this.setState({ products }));
-	}
-
-	render() {
-		const { products } = this.state;
-		return (
-			<div className="row">
-				<Cards products={products} />
+const Home = ({ products }) => {
+	// console.log(products);
+	return (
+		<HomeContainer>
+			<div className="cards">
+				{products.map(productInfo => <Card key={productInfo.id} product={productInfo} />)}
 			</div>
-		);
-	}
-}
+		</HomeContainer>
+	);
+};
 
 export default Home;
+

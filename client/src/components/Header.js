@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import materialize CSS
 // import 'materialize-css/dist/css/materialize.min.css';
 import Logo from '../assets/LogoPau.png';
@@ -18,6 +18,12 @@ const MainNav = styled.nav`
 	margin-bottom: 50px;
 	display: grid;
 	grid-template-areas: "logo" "menu";
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: white;
+	width: 100%;
+	z-index: 100;
 `;
 
 const LogoPau = styled.div`
@@ -43,38 +49,31 @@ const Li = styled.li`
 	font-size: 15px;
 `;
 
-class Header extends React.Component {
-	render() {
-		return (
-			<Router>
-				<div>
-					<MainNav>
-						<LogoPau className="logo">
-							<a href="#" className="brand-logo">
-								<img src={Logo} alt="Logo Pau" />
-							</a>
-						</LogoPau>
-						<StyledUl>
-							<Li>
-								<StyledLink className to="/">
-									Home
-								</StyledLink>
-							</Li>
-							<Li>
-								<StyledLink to="/about">About</StyledLink>
-							</Li>
-							<Li>
-								<StyledLink to="/contact">Contact</StyledLink>
-							</Li>
-						</StyledUl>
-					</MainNav>
-					<Route exact path="/" component={Home} />
-					<Route exact path="/about" component={About} />
-					<Route exact path="/contact" component={ContactForm} />
-				</div>
-			</Router>
-		);
-	}
-}
+const Header = () => {
+	return (
+		<div>
+			<MainNav>
+				<LogoPau className="logo">
+					<a href="#" className="brand-logo">
+						<img src={Logo} alt="Logo Pau" />
+					</a>
+				</LogoPau>
+				<StyledUl>
+					<Li>
+						<StyledLink className to="/">
+							Home
+						</StyledLink>
+					</Li>
+					<Li>
+						<StyledLink to="/about">About</StyledLink>
+					</Li>
+					<Li>
+						<StyledLink to="/contact">Contact</StyledLink>
+					</Li>
+				</StyledUl>
+			</MainNav>
+		</div>
+	);
+};
 
 export default Header;
