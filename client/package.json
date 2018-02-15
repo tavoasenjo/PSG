@@ -5,6 +5,7 @@
   "proxy": "http://localhost:1111",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "history": "^4.7.2",
     "materialize-css": "^0.100.2",
     "polythene-css": "^1.0.0",
     "polythene-react": "^1.0.0",
