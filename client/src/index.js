@@ -3,16 +3,18 @@ import React from "react";
 import ReactDOM from "react-dom";
 import styled from "styled-components";
 import { Router, Route, Switch, Link } from "react-router-dom";
+import createBrowserHistory from "history/createBrowserHistory";
 
 // import components
 import Header from "./components/Header";
 import Home from "./components/Home";
 import About from "./components/About";
 import ContactForm from "./components/ContactForm";
+import Videotest from "./components/Videotest";
 import SingleProduct from "./components/SingleProduct";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import createBrowserHistory from "history/createBrowserHistory";
+
 const history = createBrowserHistory();
 
 const Wrapper = styled.section`
@@ -37,6 +39,7 @@ class App extends React.Component {
             <Header />
 
             {/*<Footer />*/}
+            <Route path="/videotest" component={Videotest} />
             <Route exact path="/" render={() => <Home products={products} />} />
             <Route path="/product/:name" component={SingleProduct} />
             <Route exact path="/about" component={About} />
